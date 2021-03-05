@@ -12,7 +12,9 @@ let package = Package(
     targets: [
         .target(
             name: "SHA1",
-            path: "./Sources/"
-        ),
+            path: "./Sources/"),
+        .testTarget(
+            name: "SHA1Tests",
+            dependencies: ["SHA1"]),
     ]
 )
