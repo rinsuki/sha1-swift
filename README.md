@@ -4,7 +4,7 @@
 An SHA-1 hash implementation in Swift
 
 ## Usage ##
-1. Include SHA1.swift in your project
+1. Include Sources/SHA1.swift in your project
 2. Call a public method:
   ```swift
   let hash:String = SHA1.hexString(fromFile: filename)
