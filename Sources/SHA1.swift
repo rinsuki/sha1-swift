@@ -73,7 +73,7 @@ public struct SHA1 {
         h.4 = h.4 &+ e
     }
 
-    init(from data: inout Data){
+    public init(from data: inout Data){
         var w = ContiguousArray<UInt32>(repeating: 0x00000000, count: Self.CHUNKSIZE) // Initialise empty chunk
         let ml = data.count << 3                                        // Message length in bits
         var range = 0..<64                                            // A chunk is 64 bytes
@@ -110,11 +110,11 @@ public struct SHA1 {
         // The context (or nil) is returned, containing the hash in the h[] array
     }
     
-    var hex: String {
+    public var hex: String {
         String(format: "%08x%08x%08x%08x%08x", h.0, h.1, h.2, h.3, h.4)
     }
     
-    var data: Data {
+    public var data: Data {
         var data = Data(count: 20)
         data[(0<<2) | 0] = UInt8((h.0 >> 24) & 0xFF)
         data[(0<<2) | 1] = UInt8((h.0 >> 16) & 0xFF)
